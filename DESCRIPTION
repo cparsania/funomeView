@@ -1,0 +1,12 @@
+Package: funomeView
+Title: Fungal genome visualization resource
+Version: 0.0.0.9000
+Authors@R: person('Chirag', 'Parsania', email = 'chirag.parsania@gmail.com', role = c('cre', 'aut'))
+Description: PKG_DESC.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    shiny, 
+    golem
+RoxygenNote: 6.1.0
