@@ -7,26 +7,33 @@
 
 ## 2.1 Add modules
 ## 
-golem::add_module( name = "my_first_module" ) # Name of the module
-golem::add_module( name = "my_other_module" ) # Name of the module
+golem::add_module( name = "app_layout" )
+golem::add_module( name = "plot_settings" )
+golem::add_module( name = "gene_plot_panel" )
+golem::add_module( name = "go_plot_panel" )
 
 ## 2.2 Add dependencies
 
-usethis::use_package( "thinkr" ) # To call each time you need a new package
+usethis::use_package( "dplyr" ) # To call each time you need a new package
+usethis::use_package( "purrr" )
+usethis::use_package( "ggplot2" )
+usethis::use_package( "tidyr" )
+usethis::use_package( "shinydashboardPlus" )
+usethis::use_package( "shinydashboard" )
 
 ## 2.3 Add tests
 
-usethis::use_test( "app" )
+#usethis::use_test( "app" )
 
 ## 2.4 Add a browser button
 
-golem::browser_button()
+#golem::browser_button()
 
 ## 2.5 Add external files
 
-golem::add_js_file( "script" )
-golem::add_js_handler( "handlers" )
-golem::add_css_file( "custom" )
+# golem::add_js_file( "script" )
+# golem::add_js_handler( "handlers" )
+# golem::add_css_file( "custom" )
 
 # 3. Documentation
 
@@ -36,9 +43,9 @@ devtools::build_vignettes()
 
 ## 3.2 Code coverage
 ## You'll need GitHub there
-usethis::use_github()
-usethis::use_travis()
-usethis::use_appveyor()
+# usethis::use_github()
+# usethis::use_travis()
+# usethis::use_appveyor()
 
 # You're now set! 
 # go to dev/03_deploy.R

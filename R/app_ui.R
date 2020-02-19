@@ -4,9 +4,11 @@ app_ui <- function() {
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # List the first level UI elements here 
-    fluidPage(
-      h1("funomeView")
-    )
+    # fluidPage(
+    #   h1("funomeView")
+    # )
+    
+    mod_app_layout_ui("app_layout_ui_1")
   )
 }
 
