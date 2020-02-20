@@ -1,5 +1,5 @@
 # Module UI
-  
+
 #' @title   mod_gene_plot_panel_ui and mod_gene_plot_panel_server
 #' @description  A shiny Module.
 #'
@@ -16,24 +16,55 @@
 mod_gene_plot_panel_ui <- function(id){
   ns <- NS(id)
   tagList(
-  
+    
     
     shinydashboardPlus::boxPlus(width = NULL,
                                 status = "primary",title = "Gene plot",
                                 footer = "Select genes to show or to perform GO analysis.",
                                 solidHeader = T,collapsible = T,closable = F,
                                 fluidRow(
-                                  ## select gene plot type
+                                  
+                                  ##@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                                  ## User input panel ----
+                                  ##@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
                                   column(
-                                    width = 2, 
-                                    shinyWidgets::pickerInput(inputId = ns("gene_plot_types") ,label = "Plot type" ,choices = c("Genome view" ,"Chromosome view") ,
-                                                              selected = "Chromosome view")
+                                    
+                                    width = 3, 
+                                    
+                                    shinydashboardPlus::boxPad(color = "gray" ,
+                                                               shiny::tags$b(("Upload data")),
+                                                               br(),br(),
+                                                               ## upload inputs
+                                                               shinyWidgets::actionBttn(inputId = ns("upload_file"),
+                                                                                        label = "Select",
+                                                                                        style = "gradient",
+                                                                                        color = "success",
+                                                                                        block = T),
+                                                               
+                                                               br(),br(),
+                                                               
+                                                               ## select species 
+                                                               shinyWidgets::pickerInput(inputId = ns("select_species") , 
+                                                                                         label = "Select species" ,
+                                                                                         choices = sample(LETTERS , size = 10)),
+                                                               
+                                                               ## select gene plot type 
+                                                               shinyWidgets::pickerInput(inputId = ns("gene_plot_types") ,label = "Plot type" ,choices = c("Genome view" ,"Chromosome view") ,
+                                                                                         selected = "Chromosome view"),
+                                                               
+                                                               ## submit 
+                                                               shinyWidgets::actionBttn(inputId = ns("submit"),
+                                                                                        label = "Submit",
+                                                                                        style = "gradient",
+                                                                                        color = "success")
+                                                               )
+                                    
                                     
                                   ),
                                   
                                   ## gene plot 
                                   column(
-                                    width = 7, 
+                                    width = 6, 
                                     shiny::plotOutput(outputId = ns("funome_plot"),width = "auto")
                                   ),
                                   
@@ -49,13 +80,13 @@ mod_gene_plot_panel_ui <- function(id){
     
   )
 }
-    
+
 # Module Server
-    
+
 #' @rdname mod_gene_plot_panel
 #' @export
 #' @keywords internal
-    
+
 mod_gene_plot_panel_server <- function(input, output, session){
   ns <- session$ns
   
@@ -65,10 +96,10 @@ mod_gene_plot_panel_server <- function(input, output, session){
   
   
 }
-    
+
 ## To be copied in the UI
 # mod_gene_plot_panel_ui("gene_plot_panel_ui_1")
-    
+
 ## To be copied in the server
 # callModule(mod_gene_plot_panel_server, "gene_plot_panel_ui_1")
- 
+

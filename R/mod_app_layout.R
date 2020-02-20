@@ -38,29 +38,6 @@ mod_app_layout_ui <- function(id){
           shinydashboard::infoBox(title = "last update",value = sample(90:100,size = 1))
         ),
         
-        ##@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        ## User input panel ----
-        ##@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        fluidRow(
-          shinydashboard::box(width = 4,status = "primary",align="center",
-                              shinyWidgets::actionBttn(inputId = ns("upload_file"),
-                                                       label = "Upload",
-                                                       style = "material-flat",color = "primary"),
-          ),
-          
-          shinydashboard::box(width=4 , status = "primary",align="center",
-                              shinyWidgets::pickerInput(inputId = ns("select_species") , 
-                                                        label = "Select species" ,
-                                                        choices = sample(LETTERS , size = 10))
-          ),
-          
-          shinydashboard::box(width=4 , status = "primary",align="center",
-                              shinyWidgets::actionBttn(inputId = ns("submit"),
-                                                       label = "Submit",
-                                                       style = "material-flat",color = "primary")
-          )
-          
-        ),
         
         ##@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         ## gene plot panel ----
