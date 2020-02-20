@@ -61,7 +61,7 @@ mod_go_plot_panel_ui <- function(id){
                                   ## go plot
                                   column(
                                     width = 6, 
-                                    shiny::plotOutput(outputId = ns("go_plot"),width = "auto")
+                                    shiny::plotOutput(outputId = ns("go_plot"),width = "auto") %>% shinycssloaders::withSpinner()
                                   ),
                                   
                                   ## go plot  settings 

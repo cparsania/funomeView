@@ -18,7 +18,9 @@ Imports:
     ggplot2,
     tidyr,
     shinydashboardPlus,
-    shinydashboard
+    shinydashboard,
+    magrittr,
+    shinycssloaders
 RoxygenNote: 7.0.2
 Suggests: 
     knitr,

@@ -16,6 +16,8 @@
 #' @importFrom  shinydashboardPlus dashboardPagePlus dashboardHeaderPlus  
 #' @importFrom shinydashboard dashboardSidebar dashboardBody
 #' @importFrom shinyWidgets  actionBttn sliderTextInput dropdownButton
+#' @import magrittr
+#' @import shinycssloaders
 mod_app_layout_ui <- function(id){
   ns <- NS(id)
   tagList(

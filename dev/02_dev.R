@@ -20,6 +20,9 @@ usethis::use_package( "ggplot2" )
 usethis::use_package( "tidyr" )
 usethis::use_package( "shinydashboardPlus" )
 usethis::use_package( "shinydashboard" )
+usethis::use_package( "magrittr" )
+usethis::use_package( "shinycssloaders" )
+
 
 ## 2.3 Add tests
 

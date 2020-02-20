@@ -65,7 +65,8 @@ mod_gene_plot_panel_ui <- function(id){
                                   ## gene plot 
                                   column(
                                     width = 6, 
-                                    shiny::plotOutput(outputId = ns("funome_plot"),width = "auto")
+                                    shiny::plotOutput(outputId = ns("funome_plot"),width = "auto") %>% 
+                                      shinycssloaders::withSpinner()
                                   ),
                                   
                                   ## gene plot settings 
